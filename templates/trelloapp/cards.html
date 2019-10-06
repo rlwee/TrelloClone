@@ -1,0 +1,58 @@
+{% load static %}
+{% csrf_token %}
+<div class="card-containers ui-widget-header" id="card-content">
+        <ul class="list-view ui-widget-header">
+
+            {% for card in cards %} 
+                <!-- <li id="draggable" id="card-{{card.id}}" class="draggable ui-state-highlight" data-url="{% url 'card_drag' board_id list_id card.id %}" data-id="{{card.id}}"> -->
+                  <div class="draggable shadow-sm p-3 mb-5 bg-white rounded"
+                        id="draggable"
+                        id="card-{{card.id}}"
+                        data-url="{% url 'card_drag' board_id list_id card.id %}" 
+                        data-id="{{card.id}}"
+                    > 
+  
+                  <button type="button"
+                    
+                        id = "carddetail-{{card.id}}"
+                        data-id = "{{card.id}}"
+                        data-title="{{card.title}}"
+                        class="btn btn-primary-card" 
+                        data-remote="{% url 'card_views' board_id list_id card.id %}" 
+                        data-toggle="modal" 
+                        data-target="#card-view-modal"
+                        >{{card.title}}
+                    </button>
+
+                    <img class="imgdrag" src="{% static 'images/dragcardicon.png'  %}" width="20", height="20">
+
+                  </div>
+                <!-- </li> -->
+            {% endfor %}
+        </ul>
+</div>
+
+
+
+
+    <!-- Button trigger modal -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="card-view-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Card</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      

@@ -1,0 +1,52 @@
+
+
+<div class="detail-container">
+    <!-- <div class="edit-button">
+         <a href="{% url 'editboard' board_id=boards.pk %}" class="btn btn-secondary btn-lg " role="button" aria-disabled="true">Edit board title</a>
+    </div> -->
+    <div class="archive-board-button">
+        <a href="{% url 'archive_board' board_id=boards.pk %}" 
+           class="btn btn-secondary btn-lg " 
+           role="button" 
+           aria-disabled="true">
+           
+           Archive board
+        
+        </a>
+    </div>
+
+    <!-- <div class="delete-button">
+        <a href="{% url 'deleteboard' board_id=boards.pk %}" 
+           class="btn btn-secondary btn-lg " 
+           role="button" 
+           aria-disabled="true">
+           
+           Delete board
+        
+        </a>
+    </div> -->
+
+    <button type="button" 
+            class="btn btn-secondary" 
+            data-container="body" 
+            data-toggle="popover" 
+            data-placement="right"
+            id = "content" 
+            data-content='
+                        <ul class="listsofarchvied">
+                            {% for board in archived_boards %}
+                                <div class="list-of-archived-boards" id="board-{{board.id}}"> 
+                                    <li>{{board.title}}</li> 
+                                    <a class="retrieve-board-butt" data-url="{% url 'retrieve_board' board_id=board.pk %}" href="#">retrieve </a> 
+                                    <a class="delete-board-butt" data-url="{% url 'deleteboard' board_id=board.pk %}" href="#"> delete </a>
+                                </div>
+                            {% endfor %}
+                        </ul>
+                          '>
+
+
+            Archived boards
+
+    </button>
+
+</div>

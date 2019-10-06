@@ -1,0 +1,97 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/trelloapp.css' %}">
+        
+        
+    <body>
+        <nav id = "board-{{board.id}}" class="navbar navbar-expand-lg navbar-light bg-light">
+                {% block board %}{% endblock %}
+                {% block boardAjax %}{% endblock %}
+                {% block boardCreate %}{% endblock %}
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+
+                
+
+                <button type="button"
+                    id = "boardsbutton"
+                    class="btn btn-primary-board"
+                    data-remote="{% url 'listofboards' %}"
+                    data-target="#boards-view-modal"
+                    data-toggle="modal"
+                    >Boards
+                </button>
+
+
+                {% block invite %}{% endblock %}
+
+<!--                 <button type="button" 
+                        id="popover"
+                        class="btn btn-secondary" 
+                        data-container="body" 
+                        data-toggle="popover" 
+                        data-placement="bottom" 
+                        data-content=''>
+
+
+                        Invite member
+                </button>
+
+ -->
+                <li class="nav-item" id="logout">
+                        <a class="nav-link" href="{% url 'logout' %}">Log out Trello</a>
+                </li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <div class="container">
+            {% block content %}
+            
+            {% endblock %}
+        </div>
+
+        
+        <script src="{% static 'lib/jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'lib/jquery-ui.js' %}"></script>
+
+        <script src="{% static 'lib/popper.min.js' %}"></script>
+        <script src="{% static 'lib/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/showlists.js' %}"></script>
+        
+        
+        <!-- Button trigger modal -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="boards-view-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Boards</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+ 
+    </body>
+</html>

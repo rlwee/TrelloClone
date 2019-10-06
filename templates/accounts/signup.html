@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}Create a Trello Account{% endblock %}
+
+
+
+{% block content %}
+    <div class="header">
+    <h1>Create a Trello Account</h1>
+    <p><a href="{% url 'login' %}">or sign in to your account</a></p>
+    </div>
+    <div class="signfields">
+    <form method="POST" novalidate>{% csrf_token %}
+        {% for fields in form %}
+        <p>{{fields.label}}</p>
+        <p>{{fields}}</p>
+        <span>{{fields.errors}}</span>
+        {% endfor %}
+        <button type="submit">Create New Account</button>
+    </form>
+    </div>
+{% endblock %}

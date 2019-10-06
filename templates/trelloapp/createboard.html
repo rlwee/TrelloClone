@@ -1,0 +1,13 @@
+
+
+    <form method="POST" id="board-form" action="{% url 'boardcreate' %}" novalidate>{% csrf_token %}
+
+        {% for field in form %}
+        <div class="form-group" >
+            <label for="formGroupExampleInput"> {{ field.label }} {{ field }}</label>
+            <p class="error-board-create"></p>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Create Board</button>
+        
+    </form>

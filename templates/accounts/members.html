@@ -1,0 +1,15 @@
+{% extends 'trelloapp/trellobase.html' %}
+
+
+{% block title %}Trello-Members{% endblock %}
+
+{% block content %}
+    <p class="members head"><h1>Users: </h1></p>
+
+    <div class="users-container">
+        {% for user in users %}
+            <a  href="{% url 'userdetail' user_id=user.id %}"><p class="user">{{user.username}}</p></a>
+        {% endfor %}
+    </div>
+  
+{% endblock %}

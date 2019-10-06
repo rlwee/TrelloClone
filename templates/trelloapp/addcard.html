@@ -1,0 +1,19 @@
+
+
+{% block content %}
+<div class="card-containers">
+        <form method="POST" 
+        data-id="{{ card.id }}" 
+        class="card-form" 
+        action="{% url 'create_card' board.id lists.id %}" 
+        novalidate>{% csrf_token %}
+
+            {% for field in form %}
+                <p>{{field.label}} {{field}}</p>
+                <p class="error-card"></p>
+                <span>{{field.errors}}</span>
+            {% endfor %}
+            <button type="submit">save</button>
+        </form>
+</div>
+{% endblock %}

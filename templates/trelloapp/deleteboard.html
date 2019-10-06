@@ -1,0 +1,13 @@
+{% extends 'trelloapp/trellobase.html' %}
+
+{% block title %}Trello-Dashboard{% endblock %}
+{% block board %}<a class="navbar-brand" href="{% url 'board' pk=boards.pk %}">{{boards.title}}</a>{% endblock %}
+{% block content %}
+    <div class="edit-container">
+        <form method="POST" novalidate>{% csrf_token %}
+
+        </form>
+    </div>
+
+
+{% endblock %}

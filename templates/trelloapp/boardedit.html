@@ -1,0 +1,26 @@
+
+
+
+
+    <div class="edit-container">
+        <form method="POST" 
+        data-id="{{ boards.id }}" 
+        
+        class="board-form" 
+        action="{% url 'edit_board' boards.id %}"
+        novalidate>{% csrf_token %}
+            {% for field in form %}
+
+            <p>{{field.label}} {{field}}</p>
+            <p class="error"></p>
+
+            {% endfor %}
+
+            <button type="submit">Change</button>
+        </form>
+    </div>
+
+    <!--<div class="delete-button">
+        <a href="{% url 'deleteboard' board_id=boards.pk %}" class="btn btn-secondary btn-lg " role="button" aria-disabled="true">Delete board</a>
+    </div>-->
+

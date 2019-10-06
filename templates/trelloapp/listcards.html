@@ -1,0 +1,16 @@
+{% block content %}
+<div class="card-containers">
+        <ul class="list-view">
+            {% for card in cards %}
+                <div class="card-section" data-id = "{{ list_id }}" >
+                <li class="card-content"
+                data-title="{{ car.title }}"
+                data-update="{% url 'card_update' board_id list_id card.id %}" 
+                contenteditable="true">{{card.title}}</li>
+                    {% empty %}
+                <p>no card </p>
+                </div>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}

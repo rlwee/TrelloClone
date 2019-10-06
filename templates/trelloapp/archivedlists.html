@@ -1,0 +1,12 @@
+
+    <div class="archived-lists">
+        <ul>
+            
+                {% for list in archived %}
+                <p class="archived-detail-list">List <p class="archived-list-detail">{{list.title}}</p> from Board <p class="archived-board-detail">{{list.board}}</p></p>
+                <li>
+                    <a href="#">{{list.title}}</a>  <a class="delete-list" href="#">Delete</a>
+                </li>
+                {% endfor %}
+        </ul>
+    </div>

@@ -1,0 +1,409 @@
+body{
+
+    background-color: #F3DBCF;
+
+}
+
+.list-container{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+     
+    overflow: hidden;
+ 
+
+}
+
+.list-view{
+
+    float: left;
+}
+
+.list-content{
+    background-color:#606977;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    margin-right: 70px;    
+    padding: 2px 10px 2px 10px;
+}
+
+.detail-container{
+
+    padding-left: 20px;
+    
+}
+
+.container{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.edit-list{
+
+    margin-left: -30px;
+
+}
+
+.list-section {
+    width: 350px;
+    height: 250px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    border-radius: 20px;
+    
+    box-sizing: border-box;
+
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.edit-delete-list-button{
+
+    position: relative;
+
+}
+
+.card-content{
+
+    list-style-type: none;
+
+}
+
+.btn.btn-primary{
+
+    padding: 0px;
+
+ 
+}
+
+
+
+.btn.btn-primary-card{
+
+    position: relative;
+    top: -14px;
+    right: 14px;
+    padding-top: 2px;
+    width: 200px;
+    height: 28px;
+}
+
+.btn.btn-primary-board{
+    
+    background-color: transparent;
+
+}
+
+
+
+
+
+#boardedit{
+
+    position: relative;
+    top: -10px;
+    
+
+}
+
+#boardedit:hover{
+
+    border: 2px solid #080808;
+    
+}
+
+#boardcreate{
+
+    position: relative;
+    top: 0px;
+    color: rgba(0,0,0,.5);
+
+}
+
+#boardcreate:hover{
+
+    color: black;
+
+}
+
+#logout{
+
+    position: relative;
+    left: 1000px;
+
+}
+
+
+#dropdown{
+
+    padding: 0px;
+    position: relative;
+    top: 8px;
+    color: #606977;
+    background-color: transparent;
+    border: none;
+
+}
+
+#cards{
+
+    background-color: #606977;
+    margin: 1px;
+    padding: 1px;
+
+}
+
+.card-detail-title{
+
+    font-weight: bold;
+}
+
+.card-description{
+
+    position: relative;
+    bottom: 20;
+
+}
+
+.card-detail-label{
+
+    position: relative;
+    bottom: 20;
+
+}
+
+.mb-5, .my-5 {
+    margin-bottom: 0.1rem!important;
+}
+
+#draggable{
+
+    list-style-type: none;
+    padding-right: 20px;
+    border:1px solid #000;
+    margin-bottom: -10px;
+    width: 250px;
+    height: 20px;
+    position: relative;
+    top: 20px;
+    
+
+    
+}
+
+#draggable .imgdrag{
+
+    vertical-align: middle;
+    border-style: none;
+    position: absolute;
+    top: 5px;
+    right: 9px;
+    pointer-events: none;
+    visibility: hidden;
+
+}
+
+#draggable:hover .imgdrag{
+
+    vertical-align: middle;
+    border-style: none;
+    position: absolute;
+    top: 5px;
+    right: 9px;
+    pointer-events: none;
+    visibility: visible;
+
+}
+
+
+
+.user{
+
+    margin: 2px;
+
+}
+
+#add-to-board{
+
+    padding: 0px;
+
+}
+
+#popover{
+
+    padding: 0px;
+    color: #606977;
+    border: none;
+    background-color: transparent;
+}
+
+.board-hide{
+
+    visibility: hidden;
+
+}
+
+.delete-list{
+
+    position: relative;
+    left: 100px;
+
+}
+
+.archived-list-detail{
+
+    font-weight: bold;
+    display: inline;
+}
+
+
+.archived-detail-list{
+
+    display: inline;
+
+}
+
+.archived-board-detail{
+
+    font-weight: bold;
+    display: inline;
+
+}
+
+li {
+
+    list-style-type: none;
+
+}
+
+#list-view-settin{
+
+    background-color: transparent;
+    border: none;
+
+}
+
+.archive-this-list{
+
+    position: relative;
+    left: 0px;
+    color: red;
+
+}
+
+.btn-secondary {
+    color: fff;
+    font-size: 15px;
+    padding: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 2px;
+    background-color: gray;
+    border-color: gray;
+    width: 150px;
+    border-radius: 15px;
+    display: inline-table;
+}
+
+.btn-secondary:hover {
+    color: fff;
+    font-size: 15px;
+    padding: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 2px;
+    background-color: red;
+    border-color: red;
+    width: 150px;
+    border-radius: 15px;
+    display: inline-table;
+}
+
+
+.list-of-archived-boards{
+    border: 3px solid #606977;
+    border-radius: 7px;
+    margin-left: -30px;
+    margin-bottom: 2px;
+
+}
+
+.delete-board-butt{
+
+    margin-left: 5px;
+    color: red;
+
+}
+
+.delete-board-butt:hover{
+
+    
+    color: red;
+
+}
+
+.show-archived-lists{
+
+        position: relative;
+        left: -10px;
+
+}
+
+
+.delete-list-butt{
+
+    margin-left: 5px;
+    color: red;
+
+}
+
+.delete-list-butt:hover{
+
+    
+    color: red;
+
+}
+
+.delete-list-butt{
+
+    margin-left: 5px;
+    color: red;
+
+}
+
+.delete-board-list:hover{
+
+    
+    color: red;
+
+}
+
+.leave-board{
+
+    margin-left: 50px;
+
+}
+
+.leave-board{
+
+    color: red;
+
+}
+
+.list-group{
+
+    width: 400px;
+    position: relative;
+    left: 130%;
+    bottom: 525px;
+
+}
+
+.actlog{
+
+    font-size: 16px;
+    margin-bottom: 8px;
+}

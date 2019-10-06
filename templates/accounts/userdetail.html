@@ -1,0 +1,17 @@
+{% extends 'trelloapp/trellobase.html' %}
+{% block title %}Trello-User{% endblock %}
+
+{% block content %}
+    <p class="user-detail"><h1>User: </h1></p>
+
+    <div class="user-container">
+        
+            <p class="user">{{users.username}}</p>
+        
+
+        <div class="member-button">
+            <a href="{% url 'memberadd' user_id=users.id %}" id="add-to-board" class="btn btn-secondary btn-lg " role="button" aria-disabled="true">Add to board  </a>
+        </div>
+    </div>
+  
+{% endblock %}

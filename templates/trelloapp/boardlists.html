@@ -1,0 +1,62 @@
+{% extends 'trelloapp/trellobase.html' %}
+
+{% block boardCreate %}
+<button type="button"
+id = "boardcreate"
+class="btn btn-primary-board" 
+data-remote="{% url 'createboard' %}" 
+data-toggle="modal" 
+data-target="#board-modal"
+>Create Board</button>
+{% endblock %}
+
+{% block content %}
+    <div class="detail">
+      <h3>Created Boards</h3>
+        <ul>
+            {% for boardz in boardlist %}
+                <li><a class="boardlist"
+                href="{% url 'board' board_id=boardz.pk %}">{{boardz.title}}</a></li>
+                {% empty %}
+                <p class="noboard">No boards yet, create boards </p>   
+            {% endfor %}
+        </ul>
+        <h3 class="noboard">Invited boards:</h3>
+        <ul>
+            
+          {% for invited in board %}
+
+              {% ifchanged invited.board %}
+                <li><a class="invitedboardlist"
+                href="{% url 'board' board_id=invited.board.id %}">{{invited.board}}</a></li>
+              {% endifchanged %}
+              {% empty %}
+              <p class="noboard">No invited boards</p>
+          {% endfor %} 
+      </ul>
+
+    </div>
+
+
+   <!-- Button trigger modal -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="board-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Board</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+{% endblock %}

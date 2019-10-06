@@ -1,0 +1,20 @@
+{% extends 'trelloapp/trellobase.html' %}
+
+{% block title %}Trello-Dashboard{% endblock %}
+
+{% block content %}
+
+
+    <form  method="POST"   novalidate>{% csrf_token %}  
+    <div>
+        {% for field in listform %}
+            <p>{{ field.label }}</p>
+            <p>{{ field }}</p>
+            
+            
+        {% endfor %}
+        <button type="submit">Create List</button>
+    </div>
+    </form> 
+
+{% endblock %}

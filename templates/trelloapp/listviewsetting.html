@@ -1,0 +1,35 @@
+
+<a class="archive-this-list" 
+   data-url="{% url 'archive_list' board.id list.id %}"
+   data-id = "{{list.id}}"
+   href="{% url 'archive_list' board.id list.id %}"> 
+
+   Archive This List
+
+</a>
+
+
+<div class="show-archived-lists">
+<button type="button" 
+            class="btn btn-secondary" 
+            data-container="body" 
+            data-toggle="popover" 
+            data-placement="right"
+            id = "content" 
+            data-content='
+                        <ul class="lists-of-archived-lists">
+                            {% for list in archived_list %}
+                                <div class="list-of-archived-lists" id="list-{{list.id}}"> 
+                                    <li>{{list.title}}</li> 
+                                    <a class="retrieve-list-butt" data-url="{% url 'retrieve_list' board_id=board.id list_id=list.id %}" href="#">retrieve </a> 
+                                    <a class="delete-list-butt" data-url="{% url 'delete_archived_list' board_id=board.id list_id=list.id %}" href="#"> delete </a>
+                                </div>
+                            {% endfor %}
+                        </ul>
+                          '>
+
+
+            Archived lists
+
+</button>
+</div>

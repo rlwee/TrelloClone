@@ -1,0 +1,47 @@
+
+{% csrf_token %}
+    <div >
+        <div class="card-title">
+            <p class='error-card'></p>
+            <p class="card-detail-title"
+                id="cardedit"
+                contenteditable="true"
+                data-title="{{card.title}}"
+                data-update="{% url 'update_card' board_id list_id card.id %}">{{card.title}}</p><p class="card-description">in list <a href="#">{{blist.title}}</a></p>
+            </div>
+       
+        <div class="card-description">
+            <p>Description:</p><p class="card-detail-label"
+            contenteditable="true" 
+            data-label="{{card.labels}}"
+            data-update="{% url 'update_label' board_id list_id card.id %}">{{card.labels}}</p> 
+        </div>
+
+        <a href="{% url 'archive_card' board_id=board_id list_id=list_id card_id=card.id %}">Archive</a>
+
+        <div class="show-archived-cards">
+            <button type="button" 
+                class="btn btn-secondary" 
+                data-container="body" 
+                data-toggle="popover" 
+                data-placement="right"
+                id = "content" 
+                data-content='
+                            <ul class="lists-of-archived-cards">
+                                {% for card in archived_card %}
+                                    <div class="list-of-archived-lists" id="card-{{card.id}}"> 
+                                        <li>{{card.title}}</li> 
+                                        <a class="retrieve-card-butt" data-url="{% url 'retrieve_card' board_id=board_id list_id=list_id card_id=card.id %}" href="#">retrieve </a> 
+                                        <a class="delete-card-butt" data-url="{% url 'delete_card' board_id=board_id list_id=list_id card_id=card.id %}" href="#"> delete </a>
+                                    </div>
+                                {% endfor %}
+                            </ul>
+                            '>
+
+
+                Archived cards
+            </button>
+        </div>
+
+
+    </div>

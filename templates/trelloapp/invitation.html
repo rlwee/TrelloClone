@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+
+
+{{ domain }}{% url 'logininvitation' board_id uid %}
+
+
+You have been invited to a trello board by {{board.owner}}! Please click the link to accept the invitation.
+
+
+{% endautoescape %}

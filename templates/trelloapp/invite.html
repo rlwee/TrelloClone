@@ -1,0 +1,28 @@
+
+
+
+    <div class="invite-container">
+        <form method="POST" 
+        
+        id="invite-form"
+        action="{% url 'sent' board_id=board.pk %}"
+        class="invite-form" 
+        data-action="{% url 'invitememberform' board_id=board.pk  %}"
+        novalidate>{% csrf_token %}
+            <!-- {% for field in form %}
+
+            <p>{{field}}</p>
+            <p class="invite-error"></p>
+            <p class="invite-success"></p>
+            {% endfor %} -->
+                
+            <p>{{form.email}}</p>
+            <p class="board-hide">{{form.board}}</p>
+            <p class='invite-success'></p>
+            <p class='invite-fail'></p>
+            <p class='invite-failed'></p>
+            
+
+            <button type="submit">invite to board</button>
+        </form>
+    </div>

@@ -1,0 +1,16 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" href = "{% static 'css/accounts.css' %}">
+    </head>
+
+    <body>
+
+        {% block content %}
+        {% endblock %}  
+
+
+    </body>
+</html>
